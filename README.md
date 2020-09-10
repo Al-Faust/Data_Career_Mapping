@@ -6,7 +6,9 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
 1) Scrape Data Scientist and Data Analyst jobs from Glassdoor 
     - glassdoor_scrape.py
     - runscrape.py
-       - Scraped about 3800 jobs from glassdoor.     
+       - Scraped about 3800 jobs from glassdoor.   
+            - ds3k.csv 
+            - das.csv 
     - Resource for glassdoor scraping - https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905
   
 2) Clean the data 
@@ -19,7 +21,7 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
         - ed.csv
         - years_exp.csv
       
-3) With help of OpenCageGeocode API retrieved latitude and longitude for the job locations
+3) With the help of OpenCageGeocode API retrieved latitude and longitude for the job locations
     - location_api.ipynb
       - created all_jobs_lat_lon.csv file
     
