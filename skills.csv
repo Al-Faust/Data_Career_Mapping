@@ -1,14 +1,14 @@
-skill,regex_pattern,count,pct
-R,\WR\W+\s*,1080,0.38
-Python,(?i)\WPython\W,1366,0.48
-Hadoop,(?i)\WHadoop\W?,248,0.09
-SQL,(?i)SQL\w*,1515,0.53
-Tableau,(?i)\WTableau\W?,515,0.18
-NoSQL,(?i)\WNoSQL\W?,264,0.09
-Power BI,(?i)\WPower\s?BI\W?,221,0.08
-AWS,(?i)\WAWS\W?,321,0.11
-SAS,(?i)\WSAS\W?,273,0.1
-Hive,(?i)\WHive\W?,198,0.07
-Spark,(?i)\WSpark?\W?,475,0.17
-Java,(?i)Java\w*,502,0.18
-JavaScript,(?i)\WJavaScript\W?,199,0.07
+skill,count,pct
+R,1080,0.38
+Python,1366,0.48
+Hadoop,248,0.09
+SQL,1515,0.53
+Tableau,515,0.18
+NoSQL,264,0.09
+Power BI,221,0.08
+AWS,321,0.11
+SAS,273,0.1
+Hive,198,0.07
+Spark,475,0.17
+Java,502,0.18
+JavaScript,199,0.07
