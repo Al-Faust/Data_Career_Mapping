@@ -9,5 +9,5 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
   - Removed special characters from data using Regualr Expressions
   - With the help of scikit learn and NLTK packages extracted years of experice, required education qaulifications, required skills.
 3) Exploratory Data Analysis 
-  - Created basic plots using matplotlib abd seaborn pakcages.
+  - Created basic plots using matplotlib and seaborn pakcages.
   
