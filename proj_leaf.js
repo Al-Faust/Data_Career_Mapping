@@ -27,7 +27,7 @@ for (var i = 0; i < locations.length; i++) {
   );
 }
 
-.bindPopup("<h1>" + city.name + "</h1> <hr> <h3>Population " + city.population + "</h3>")
+// .bindPopup("<h1>" + city.name + "</h1> <hr> <h3>Population " + city.population + "</h3>")
 
 // Function to determine marker size based on population
 function markerSize(population) {
