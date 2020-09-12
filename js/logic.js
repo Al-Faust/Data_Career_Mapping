@@ -1,50 +1,29 @@
 // Initialize all of the LayerGroups we'll be using
 var layers = {
-  dataAnalyst: new L.LayerGroup(),
-  dataScientist: new L.LayerGroup(),
-  python: new L.LayerGroup(),
-  sql: new L.LayerGroup(),
-  javascript: new L.LayerGroup(),
-  java: new L.LayerGroup(),
-  hadoop: new L.LayerGroup(),
-  excel: new L.LayerGroup(),
-  spark: new L.LayerGroup(),
-  sas: new L.LayerGroup()
+  DATA_ANALYST: new L.LayerGroup(),
+  DATA_SCIENTIST: new L.LayerGroup(),
+  OTHER: new L.LayerGroup()
 };
 
 // Creating map object
 var myMap = L.map("map", {
-  center: [40.7128, -74.0059],
-  zoom: 11,
+  center: [37.7790262, -122.4199061],
+  zoom: 12,
   layers: [
-    layers.dataAnalyst,
-    layers.dataScientist,
-    layers.python,
-    layers.sql,
-    layers.javascript,
-    layers.java,
-    layers.hadoop,
-    layers.excel,
-    layers.spark,
-    layers.sas
+    layers.DATA_ANALYST,
+    layers.DATA_SCIENTIST,
+    layers.OTHER
   ]
 });
 
-// Create a control for our layers, add our overlay layers to it
-L.control.layers(null, overlays).addTo(myMap);
-
-// Create a legend to display information about our map
-var info = L.control({
-  position: "bottomright"
-});
-
-// When the layer control is added, insert a div with the class of "legend"
-info.onAdd = function() {
-  var div = L.DomUtil.create("div", "legend");
-  return div;
+// Create an overlays object to add to the layer control
+var overlays = {
+  "Data Analyst": layers.DATA_ANALYST,
+  "Data Scientist": layers.DATA_SCIENTIST,
+  "Other": layers.OTHER
 };
-// Add the info legend to the map
-info.addTo(myMap);
+
+L.control.layers(null, overlays).addTo(myMap);
 
 // Adding tile layer
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -57,41 +36,62 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // An array containing each city's name, location, and population
-var cities = [{
-  Job_Title_Fixed: "Data Scientist",
+var jobs = [{
+  job_title: "Data Analyst",
+  industry: "Healthcare",
   avg_salary: "$107,858.74",
-  population: "8,550,405"
+  lat: 37.7790262,
+  lon: -122.4199061,
+  skill: ['SQL', 'Python']
 },
 {
-  location: [41.8781, -87.6298],
-  name: "Chicago",
-  population: "2,720,546"
+  job_title: "Data Analyst",
+  industry: "Consulting",
+  avg_salary: "$78,000.00",
+  lat: 37.7790262,
+  lon: -122.4199061,
+  skill: ['SQL', 'Python', 'SAS']
 },
 {
-  location: [29.7604, -95.3698],
-  name: "Houston",
-  population: "2,296,224"
+  job_title: "Data Scientist",
+  industry: "Healthcare",
+  avg_salary: "$68,000.00",
+  lat: 44.8546856,
+  lon: -93.470786,
+  skill: ['SQL', 'SAS']
 },
 {
-  location: [34.0522, -118.2437],
-  name: "Los Angeles",
-  population: "3,971,883"
+  job_title: "Data Scientist",
+  industry: "Media",
+  avg_salary: "$60,000.00",
+  lat: 41.2230048,
+  lon: -111.9738429,
+  skill: ['SQL', 'SAS']
 },
 {
-  location: [41.2524, -95.9980],
-  name: "Omaha",
-  population: "446,599"
+  job_title: "Other",
+  industry: "Finance",
+  avg_salary: "$60,000.00",
+  lat: 38.7150511,
+  lon: -80.2710557,
+  skill: ['SQL', 'SAS']
 }
 ];
 
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 
 // nested if to check selected entries
-for (var i = 0; i < cities.length; i++) {
-  var city = cities[i];
-  L.marker(city.location)
-    .bindPopup("<h1>" + city.name + "</h1> <hr> <h3>Population " + city.population + "</h3>")
-    .addTo(myMap);
+for (var i = 0; i < jobs.length; i++) {
+  var job = jobs[i];
+  var job_title_fix = job.job_title.replace(" ","_").toUpperCase()
+
+  var newMarker = L.marker([job.lat, job.lon])
+    .bindPopup("<h1>" + job.job_title + "</h1> <hr> <h3>Industry: " + job.industry + "</h3> <br> <h3>Avg Salary: " + job.avg_salary + "</h3>")
+
+  // Add the new marker to the appropriate layer
+  newMarker.addTo(layers[job_title_fix]);
 }
+
+
 
 //ref citibike exercise for multiple layer conditioning
