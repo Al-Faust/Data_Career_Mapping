@@ -13,7 +13,6 @@ for (var i = 0; i < locations.length; i++) {
       fillOpacity: 0.75,
       color: "white",
       fillColor: "white",
-      radius: markerSize(locations[i].state.population)
     })
   );
 
@@ -24,7 +23,6 @@ for (var i = 0; i < locations.length; i++) {
       fillOpacity: 0.75,
       color: "purple",
       fillColor: "purple",
-      radius: markerSize(locations[i].city.population)
     })
   );
 }
