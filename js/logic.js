@@ -1,3 +1,4 @@
+
 // Initialize all of the LayerGroups we'll be using
 var layers = {
   DATA_ANALYST: new L.LayerGroup(),
@@ -64,7 +65,7 @@ var jobs = [{
   job_title: "Data Scientist",
   industry: "Media",
   avg_salary: "$60,000.00",
-  lat: 41.2230048,
+  lat: 37.7790262,
   lon: -111.9738429,
   skill: ['SQL', 'SAS']
 },
@@ -72,11 +73,15 @@ var jobs = [{
   job_title: "Other",
   industry: "Finance",
   avg_salary: "$60,000.00",
-  lat: 38.7150511,
-  lon: -80.2710557,
+  lat: 37.7790262,
+  lon: -122.4199061,
   skill: ['SQL', 'SAS']
 }
 ];
+
+var DA = [];
+  var DS = [];
+  var Other = [];
 
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 
@@ -84,6 +89,17 @@ var jobs = [{
 for (var i = 0; i < jobs.length; i++) {
   var job = jobs[i];
   var job_title_fix = job.job_title.replace(" ","_").toUpperCase()
+  
+  // if (job.job_title == "Data Analyst") {
+  //   DA.push({job});
+  //   var newMarker = L.marker([job.lat, job.lon])
+  //     .bindPopup("<h1>" + job.job_title + "</h1> <hr> <h3>Industry: " + job.industry + "</h3> <br> <h3>Avg Salary: " + job.avg_salary + "</h3>")
+
+  //   // Add the new marker to the appropriate layer
+  //   newMarker.addTo(layers[job_title_fix]);
+  // };
+
+
 
   var newMarker = L.marker([job.lat, job.lon])
     .bindPopup("<h1>" + job.job_title + "</h1> <hr> <h3>Industry: " + job.industry + "</h3> <br> <h3>Avg Salary: " + job.avg_salary + "</h3>")
@@ -91,7 +107,5 @@ for (var i = 0; i < jobs.length; i++) {
   // Add the new marker to the appropriate layer
   newMarker.addTo(layers[job_title_fix]);
 }
-
-
 
 //ref citibike exercise for multiple layer conditioning
