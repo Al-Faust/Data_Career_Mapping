@@ -79,10 +79,56 @@ var jobs = [{
 }
 ];
 
-var DA = [];
-  var DS = [];
-  var Other = [];
-
+var AL_list = [];
+var AK_list = [];
+var AZ_list = [];
+var AR_list = [];
+var CA_list = [];
+var CO_list = [];
+var CT_list = [];
+var DE_list = [];
+var DC_list = [];
+var FL_list = [];
+var GA_list = [];
+var HI_list = [];
+var ID_list = [];
+var IL_list = [];
+var IA_list = [];
+var KS_list = [];
+var KY_list = [];
+var LA_list = [];
+var ME_list = [];
+var MD_list = [];
+var MA_list = [];
+var MI_list = [];
+var MN_list = [];
+var MS_list = [];
+var MO_list = [];
+var MT_list = [];
+var NE_list = [];
+var NV_list = [];
+var NH_list = [];
+var NJ_list = [];
+var NM_list = [];
+var NY_list = [];
+var NC_list = [];
+var ND_list = [];
+var OH_list = [];
+var OK_list = [];
+var OR_list = [];
+var PA_list = [];
+var RI_list = [];
+var SC_list = [];
+var SD_list = [];
+var TN_list = [];
+var TX_list = [];
+var UT_list = [];
+var VT_list = [];
+var VA_list = [];
+var WA_list = [];
+var WV_list = [];
+var WI_list = [];
+var WY_list = [];
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 
 // nested if to check selected entries
@@ -98,14 +144,13 @@ for (var i = 0; i < jobs.length; i++) {
   //   // Add the new marker to the appropriate layer
   //   newMarker.addTo(layers[job_title_fix]);
   // };
-
-
-
   var newMarker = L.marker([job.lat, job.lon])
     .bindPopup("<h1>" + job.job_title + "</h1> <hr> <h3>Industry: " + job.industry + "</h3> <br> <h3>Avg Salary: " + job.avg_salary + "</h3>")
 
   // Add the new marker to the appropriate layer
   newMarker.addTo(layers[job_title_fix]);
 }
-
+for (var i=0; i<jobs.length; i++){
+  
+}
 //ref citibike exercise for multiple layer conditioning
