@@ -10,6 +10,12 @@ path = r"C:/Users/xtrad/Desktop/TheBoot/Project-2/Project2/chromedriver.exe"
 #ds_df.to_csv('datas_scientist_jobs.csv', index = False)
 
 # scrape data analyst jobs
+<<<<<<< HEAD
 da_df = gs.get_jobs('data analyst', 800, False, path, 15)
 
 da_df.to_csv('das.csv', index=False)
+=======
+da_df = gs.get_jobs('data scietist', 10, False, path, 15)
+
+da_df.to_csv('da.csv', index=False)
+>>>>>>> data_scraping_cleaning
