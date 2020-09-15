@@ -29,5 +29,5 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
      - created refined_skills.csv file
     
 5) Exploratory Data Analysis 
-    - Created basic plots using matplotlib and seaborn pakcages.
+    - Created basic plots using matplotlib, seaborn, and plotly pakcages.
   
