@@ -39,8 +39,7 @@ def welcome():
 def jobs():
     # Create our session (link) from Python to the DB
     session = Session(engine)
-
-    """Return a list of all passenger names"""
+    
     # Query all jobs data
     results = session.query(jobs_table.job_title, jobs_table.industry, jobs_table.avg_salary, jobs_table.state, jobs_table.lat, jobs_table.lon).all()
 

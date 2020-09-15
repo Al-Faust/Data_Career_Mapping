@@ -151,6 +151,56 @@ for (var i = 0; i < jobs.length; i++) {
   newMarker.addTo(layers[job_title_fix]);
 }
 for (var i=0; i<jobs.length; i++){
-  
+  var job=jobs[i];
+
+  if (job.state == "AL"){
+    AL_list.push({job});
+  } else if (job.state == "AK"){
+    AK_list.push({job});
+  } else if (job.state == "AZ"){
+    AZ_list.push({job});
+  } else if (job.state == "AR"){
+    AR_list.push({job});
+  } else if (job.state == "CA"){
+    CA_list.push({job})
+  } else if (job.state == "CO"){
+    CO_list.push({job})
+  } else if (job.state == "CT"){
+    CT_list.push({job})
+  } else if (job.state == "DE"){
+    DE_list.push({job})
+  } else if (job.state == "DC"){
+    DC_list.push({job})
+  } else if (job.state == "FL"){
+    FL_list.push({job})
+  } else if (job.state == "GA"){
+    GA_list.push({job})
+  } else if (job.state == "HI"){
+    HI_list.push({job})
+  } else if (job.state == "ID"){
+    ID_list.push({job})
+  } else if (job.state == "IL"){
+    IL_list.push({job})
+  } else if (job.state == "IA"){
+    IA_list.push({job})
+  } else if (job.state == "KS"){
+    KS_list.push({job})
+  } else if (job.state == "KY"){
+    KY_list.push({job})
+  } else if (job.state == "LA"){
+    LA_list.push({job})
+  } else if (job.state == "ME"){
+    ME_list.push({job})
+  } else if (job.state == "MD"){
+    MD_list.push({job})
+  } else if (job.state == "MA"){
+    MA_list.push({job})
+  } else if (job.state == "MI"){
+    MI_list.push({job})
+  } else if (job.state == "MN"){
+    MN_list.push({job})
+  } else if (job.state == "MS"){
+    MS_list.push({job})
+  }
 }
 //ref citibike exercise for multiple layer conditioning
