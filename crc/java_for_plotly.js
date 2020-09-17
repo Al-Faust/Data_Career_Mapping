@@ -6,11 +6,17 @@ Plotly.d3.csv("all_jobs.csv", function (error, rows) {
     var trace = {
         x: unpack(rows, 'Job_Title'),
         y: unpack(rows, 'Company_Name'),
-        type: "bar",
+        type: "scatter",
         orientation: 'h',
+        marker: {
+            size: unpack(rows, 'Job_Title'),
+            sizemode: 'area', 
+            sizeref: 2000
+                },
+
         transforms: [{
             type: 'groupby',
-            groups: 'Company_Name'
+            groups: unpack(rows, 'Company_Name')
         }]
 
     }
@@ -27,9 +33,20 @@ Plotly.d3.csv("all_jobs.csv", function (error, rows) {
         x: unpack(rows, 'State'),
         y: unpack(rows, 'Job_Title'),
         type: 'bar',
+        marker: {
+            size: unpack(rows, 'Job_Title'),
+            sizemode: 'area', 
+            sizeref: 2000
+                },
         transforms: [{
             type: 'groupby',
-            groups: 'State'
+            groups: unpack(rows, 'State')
+        }, {
+            type: 'aggregate',
+            groups: unpack(rows, 'State'),
+            aggregations: [
+                {target: 'y', func: 'count'}
+            ]
         }]
     }
     var data2 = [trace2];
@@ -37,7 +54,7 @@ Plotly.d3.csv("all_jobs.csv", function (error, rows) {
     var layout2 = {
         title: "Number of Jobs per State",
         xaxis: { title: "State" },
-        yaxis: { title: 'Number of Jobs' }
+        // yaxis: { title: 'Number of Jobs' }
     };
 
 
@@ -45,22 +62,3 @@ Plotly.d3.csv("all_jobs.csv", function (error, rows) {
 Plotly.newPlot("plot", data, layout);
 Plotly.newPlot("plott", data2, layout2);
 })
-
-// var subject = ['Moe', 'Larry', 'Curly', 'Moe', 'Larry', 'Curly', 'Moe', 'Larry', 'Curly', 'Moe', 'Larry', 'Curly']
-// var score = [1, 6, 2, 8, 2, 9, 4, 5, 1, 5, 2, 8]
-
-// var data = [{
-//     type: 'bar',
-//     x: subject,
-//     y: score,
-//     mode: 'markers',
-//     transforms: [{
-//         type: 'groupby',
-//         groups: subject,
-//         styles: [
-//             { target: 'Moe', value: { marker: { color: 'blue' } } },
-//             { target: 'Larry', value: { marker: { color: 'red' } } },
-//             { target: 'Curly', value: { marker: { color: 'black' } } }
-//         ]
-//     }]
-// }]
