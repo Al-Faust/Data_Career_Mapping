@@ -6,19 +6,20 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
 1) Scrape Data Scientist and Data Analyst jobs from Glassdoor 
     - glassdoor_scrape.py
          - imports
+              - time , pandas
               - NoSuchElementException, ElementClickInterceptedException, StaleElementReferenceException from selenium.common.exceptions 
-              - webdriver from selenium, time, and pandas                
+              - webdriver from selenium               
     - runscrape.py
        - Scraped about 3800 jobs from glassdoor.   
-            - ds3k.csv 
-            - das.csv 
+            - ds3k.csv ==> 3000 Data Scientist jobs
+            - das.csv ==> 786 Data Analyst jobs
     - Resource for glassdoor scraping - https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905
   
 2) Clean the data 
     - data_cleaning.ipynb 
       - imports
-          - numpy, pandas, sys, os, re, pprint, word_tokenize from nltk.tokenize, 
-            WordNetLemmatizer from nltk.stem, stopwords from nltkcorpus, string, text sklearn.feature_extraction              
+          - numpy, pandas, sys, os, re, pprint, string, word_tokenize from nltk.tokenize, 
+            WordNetLemmatizer from nltk.stem, stopwords from nltkcorpus, text sklearn.feature_extraction              
       - Removed special characters from data using Regualr Expressions
       - With the help of scikit learn and NLTK packages extracted years of experice, required education qaulifications, required skills.
       - created below files after data cleanup
