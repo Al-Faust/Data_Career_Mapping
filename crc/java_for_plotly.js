@@ -10,9 +10,9 @@ Plotly.d3.csv("Output/all_jobs.csv", function (error, rows) {
         orientation: 'h',
         marker: {
             size: unpack(rows, 'Job_Title'),
-            sizemode: 'area', 
+            sizemode: 'area',
             sizeref: 2000
-                },
+        },
 
         transforms: [{
             type: 'groupby',
@@ -35,9 +35,9 @@ Plotly.d3.csv("Output/all_jobs.csv", function (error, rows) {
         type: 'bar',
         marker: {
             size: unpack(rows, 'Job_Title'),
-            sizemode: 'area', 
+            sizemode: 'area',
             sizeref: 2000
-                },
+        },
         transforms: [{
             type: 'groupby',
             groups: unpack(rows, 'State')
@@ -45,7 +45,7 @@ Plotly.d3.csv("Output/all_jobs.csv", function (error, rows) {
             type: 'aggregate',
             groups: unpack(rows, 'State'),
             aggregations: [
-                {target: 'y', func: 'count'}
+                { target: 'y', func: 'count' }
             ]
         }]
     }
@@ -56,9 +56,39 @@ Plotly.d3.csv("Output/all_jobs.csv", function (error, rows) {
         xaxis: { title: "State" },
         // yaxis: { title: 'Number of Jobs' }
     };
+    var trace3 = {
+        x: unpack(rows, 'Industry'),
+        y: unpack(rows, 'Job_Title'),
+        mode: 'markers',
+        type: 'scatter',
+        // orientation: 'h',
+        marker: {
+            color: 'rgb(142, 124, 195)',
+            size: 12,
+            // size: unpack(rows, 'Industry'),
+            sizemode: 'area',
+            sizeref: 2000
+        },
+        transforms: [{
+            type: 'groupby',
+            groups: unpack(rows, 'Industry'),
+        }, {
+            type: 'aggregate',
+            groups: unpack(rows, 'Industry'),
+            aggregations: [
+                { target: 'x', func: 'count' }
+            ]
+        }]
+    }
+    var data3 = [trace3];
+
+    var layout3 = {
+        title: "The Industries",
+        xaxis: { title: 'Industries' },
+    };
 
 
-
-Plotly.newPlot("plot", data, layout);
-Plotly.newPlot("plott", data2, layout2);
+    Plotly.newPlot("plot", data, layout);
+    Plotly.newPlot("plott", data2, layout2);
+    Plotly.newPlot("plot3", data3, layout3);
 })
