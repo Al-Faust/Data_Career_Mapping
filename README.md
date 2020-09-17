@@ -29,8 +29,8 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
       
 3) With the help of OpenCageGeocode API retrieved latitude and longitude for the job locations
     - location_api.ipynb
-         - import OpenCageGeocode from opencage.geocoder
-      - created all_jobs_lat_lon.csv file
+        - import OpenCageGeocode from opencage.geocoder
+     - created all_jobs_lat_lon.csv file
 
 4) Extracting required skills - extract_skills.ipynb
      - created refined_skills.csv file
