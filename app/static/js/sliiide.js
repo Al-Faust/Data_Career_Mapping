@@ -32,7 +32,8 @@
       animation_curve: "cubic-bezier(0.54, 0.01, 0.57, 1.03)",
       body_slide: true,
       no_scroll: false,
-      auto_close: false
+      auto_close: false,
+      width: 150
     }, options );
 
     var newSize;
@@ -84,7 +85,7 @@
     var bodySlideProp = {
 
       setleft: function(distance) {
-        this.left.activateAnimation.transform = 'translateX('+distance+'px)';
+        this.left.activateAnimation.transform = 'translateX(150px)';
         this.left.deactivateAnimation.transform = 'translateX(0px)';
       },
       setright: function(distance) {
@@ -121,7 +122,7 @@
 
       left: {
         properties: function() {
-          var left = '-' + $sliiider.width() + 'px';
+          var left = '-' + 100 + 'px';
           return {top: '0', left: left};
         },
         activateAnimation: {transform: 'translateX(100%)'},

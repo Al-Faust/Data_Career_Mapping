@@ -60,8 +60,25 @@ def welcome():
 
 @app.route("/map.html")
 def analysis():
-
-    return render_template("map.html")
+    jobs_list = []
+    for row in jobs_table:
+        job_dict = {
+            "job_title": row[0],
+            "industry": row[1],
+            "state": row[2],
+            "lat": str(row[3]),
+            "lon": str(row[4])
+        }
+        jobs_list.append(job_dict)
+    avg_salary_list = []
+    for row in jobs_salary:
+        salary_dict = {
+            "job_title": row[0],
+            "avg_salary": str(row[1]),
+            "state": row[2]
+        }
+        avg_salary_list.append(salary_dict)
+    return (render_template("map.html", jobs=jobs_list, avg_salary=avg_salary_list))
 
 if __name__ == '__main__':
     app.run(debug=True)
