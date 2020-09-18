@@ -9,7 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="analysis.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/analysis.css') }}">
+
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/nav-icon.css') }}" rel="stylesheet">
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -18,6 +21,31 @@
 </head>
 
 <body>
+    <div id="nav-icon2" style="z-index: 999">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+      <div class="sliding-menu flex-center-wrapper flex-column left-menu">
+        <ul>
+          <li>
+            <a href="map.html">Map</a>
+          </li>
+          <li style="list-style: none; display: inline">
+            <hr>
+          </li>
+          <li>
+            <a href="index.html">Analysis</a>
+          </li>
+          <li style="list-style: none; display: inline">
+          </li>
+        </ul><span class="sliiider-exit exit left-exit"></span>
+      </div>
+
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">What to Look for When Job Searching</h1>
@@ -40,7 +68,7 @@
                 SQL required over 50% of the time. While Python may be the second most asked for skill in today's job enviroment, it is a fairly common skill to have in your arsenal. Most companies require their candidates to know Python or R, but not necessarily both. Pay attention to where you are applying as well, as that will determine what languages are needed. </p>
             <p class="card-text"><small class="text-muted">Last updated September, 2020</small></p>
         </div>
-        <a href="images/skills.png" title="The Skills"><img src="images/skills.png" class="img-responsive"
+        <a href="static/img/skills.png" title="The Skills"><img src="static/img/skills.png" class="img-responsive"
                 alt="The Skills"></a>
         <!-- <img src="..." class="card-img-top" alt="..."> -->
     </div>
@@ -55,7 +83,7 @@
                 need, while Virginia is searching for Data Analysts and Data Engineers. </p>
             <p class="card-text"><small class="text-muted">Last updated September, 2020</small></p>
         </div>
-        <a href="images/positions_all.png" title="The Skills"><img src="images/positions_all.png" class="img-responsive"
+        <a href="static/img/positions_all.png" title="The Skills"><img src="static/img/positions_all.png" class="img-responsive"
                 alt="The Skills"></a>
         <!-- <img src="..." class="card-img-top" alt="..."> -->
     </div>
@@ -69,7 +97,7 @@
             </p>
             <p class="card-text"><small class="text-muted">Last updated September, 2020</small></p>
         </div>
-        <a href="images/num_title.png" title="The Skills"><img src="images/num_title.png" class="img-responsive"
+        <a href="static/mg/num_title.png" title="The Skills"><img src="static/img/num_title.png" class="img-responsive"
                 alt="The Skills"></a>
         <!-- <img src="..." class="card-img-top" alt="..."> -->
     </div>
@@ -83,7 +111,7 @@
                 Maryland at 140 open positions.</p>
             <p class="card-text"><small class="text-muted">Last updated September, 2020</small></p>
         </div>
-        <a href="images/job_count.png" title="The Skills"><img src="images/job_count.png" class="img-responsive"
+        <a href="static/img/job_count.png" title="The Skills"><img src="static/img/job_count.png" class="img-responsive"
                 alt="The Skills"></a>
         <div id="plott"></div>
         <!-- <img src="..." class="card-img-top" alt="..."> -->
@@ -99,7 +127,7 @@
                 finance are continually expanding. </p>
             <p class="card-text"><small class="text-muted">Last updated September, 2020</small></p>
         </div>
-        <a href="images/no_pos.png" title="The Skills"><img src="images/no_pos.png" class="img-responsive"
+        <a href="static/img/no_pos.png" title="The Skills"><img src="static/img/no_pos.png" class="img-responsive"
                 alt="The Skills"></a>
         <!-- <img src="..." class="card-img-top" alt="..."> -->
     </div>
@@ -120,7 +148,7 @@
                 paying their employees. This information gives you bargaining power at the table as well as gives you an indication of the fields you may want to try for or avoid. While compensation may not be everything, this information does help you understand what you should be expecting when you are at the interview table.  </p>
             <p class="card-text"><small class="text-muted">Last updated September, 2020</small></p>
         </div>
-        <a href="images/avg_salary.png" title="The Skills"><img src="images/avg_salary.png" class="img-responsive"
+        <a href="static/img/avg_salary.png" title="The Skills"><img src="static/img/avg_salary.png" class="img-responsive"
                 alt="The Skills"></a>
         <!-- <img src="..." class="card-img-top" alt="..."> -->
     </div>
@@ -147,8 +175,29 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <!-- <script src="plots.js"></script> -->
-    <script src="crc/java_for_plotly.js"></script>
-
+    <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/java_for_plotly.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sliiide.js') }}"></script>
+    <script type="text/javascript">
+      var $navIcon = $('#nav-icon2')
+      var menu = $('.left-menu').sliiide({place: 'left', exit_selector: '.left-exit', toggle: '#nav-icon2'});
+      var notes = $('.note');
+      $('.slider-toggle').on('click', function()  {
+        var $button = $(this);
+        if ($button.hasClass('selected')) {return;}
+        $navIcon.removeClass('flip animated');
+        notes.fadeOut(700);
+        var place = $button.attr('data-link').split('-')[0];
+        var menuPlace = $button.attr('data-link');
+        var note;
+        menu.reset();
+        $button.addClass('selected');
+        $('.slider-toggle').not($button).removeClass('selected');
+        menu = $('.'+menuPlace).sliiide({place: place, exit_selector: '.'+place+'-exit', toggle: '#nav-icon2'});
+        $navIcon.addClass('flip');
+        $('.note[data-link="'+menuPlace+'"]').fadeIn(700).css('display','').removeClass('display-off');
+      })
+      </script>
 
 
 </body>
