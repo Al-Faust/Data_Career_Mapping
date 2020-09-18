@@ -1,8 +1,4 @@
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-from flask_pymongo import PyMongo
+  
 import psycopg2
 from flask import Flask, jsonify, render_template, url_for
 
