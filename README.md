@@ -18,11 +18,10 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
 2) Clean the data 
     - data_cleaning.ipynb 
       - imports
-          - numpy, pandas, sys, os, re, pprint, string, word_tokenize from nltk.tokenize, 
-            WordNetLemmatizer from nltk.stem, stopwords from nltkcorpus, text sklearn.feature_extraction              
+          - numpy, pandas, sys, os, re, pprint, string, text from sklearn.feature_extraction              
       - Removed special characters from data using Regualr Expressions
-      - With the help of scikit learn and NLTK packages extracted years of experice, required education qaulifications, required skills.
-      - created below files after data cleanup
+      - Extracted years of experice, required education qaulifications, required skills.
+      - Created below files after data cleanup
         - all_jobs.csv 
         - skills.csv
         - ed.csv
