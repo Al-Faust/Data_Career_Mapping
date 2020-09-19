@@ -16,7 +16,7 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
     - Resource for glassdoor scraping - https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905
   
 2) Clean the data 
-    - data_cleaning.ipynb 
+    - data_cleanup.ipynb 
       - imports
           - numpy, pandas, sys, os, re, pprint, string, text from sklearn.feature_extraction              
       - Removed special characters from data using Regualr Expressions
@@ -32,9 +32,11 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
         - import OpenCageGeocode from opencage.geocoder
      - created all_jobs_lat_lon.csv file
 
-4) Extracting required skills - extract_skills.ipynb
-     - created refined_skills.csv file
+4) Extracting required skills 
+    - extract_skills.ipynb
+        - created refined_skills.csv file
     
-5) Exploratory Data Analysis - eda.ipynb
-    - Created basic plots using matplotlib, seaborn, and plotly pakcages.
+5) Exploratory Data Analysis 
+    - eda.ipynb
+        - Created basic plots using matplotlib, seaborn, and plotly pakcages.
   
