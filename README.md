@@ -35,6 +35,6 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
 4) Extracting required skills - extract_skills.ipynb
      - created refined_skills.csv file
     
-5) Exploratory Data Analysis 
+5) Exploratory Data Analysis - eda.ipynb
     - Created basic plots using matplotlib, seaborn, and plotly pakcages.
   
