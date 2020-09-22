@@ -47,12 +47,14 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
         
 7) app
     - app.py
+        - used flask and psycopg2 in app.py to load sql data into html and js pages.
     - index.html
+        - created an analysis page to assist in understand of data.
     - map.html
+        - used leaflet to populate data on a map. Used separate map layers to organize data.
     - logic.js
     - config.js
     - java_for_plotly.js
     - sliiide.js
-        - used flask and psycopg2 in app.py to load sql data into html and js pages.
         - Introduced a new library(Jquery/sliiide) not previously taught in class to handle menu options.
-        - used leaflet to populate data on a map. Used separate map layers to organize data.
+        
