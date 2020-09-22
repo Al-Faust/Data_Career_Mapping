@@ -42,17 +42,17 @@ Creating interactive map showing salary comparison between Data Analyst & Data S
   
 6) SQL Database Load
     - refined_db.sql
-    -avg_salary_table.sql
-        -created tables in PgAdmin from csv
+    - avg_salary_table.sql
+        - created tables in PgAdmin from csv
         
 7) app
-    -app.py
-    -index.html
-    -map.html
-    -logic.js
-    -config.js
-    -java_for_plotly.js
-    -sliiide.js
-        -used flask and psycopg2 in app.py to load sql data into html and js pages.
-        -Introduced a new library(Jquery/sliiide) not previously taught in class to handle menu options.
-        -used leaflet to populate data on a map. Used separate map layers to organize data.
+    - app.py
+    - index.html
+    - map.html
+    - logic.js
+    - config.js
+    - java_for_plotly.js
+    - sliiide.js
+        - used flask and psycopg2 in app.py to load sql data into html and js pages.
+        - Introduced a new library(Jquery/sliiide) not previously taught in class to handle menu options.
+        - used leaflet to populate data on a map. Used separate map layers to organize data.
