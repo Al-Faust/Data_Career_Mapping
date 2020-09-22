@@ -1,5 +1,5 @@
 ![Data Science](app/static/img/data-scientist-musthave-skills.jpg)
-# Project2
+# Data Career Mapping
 
 Creating interactive map showing salary comparison between Data Analyst & Data Scientist from Glassdoor. Top cities are highlighted on the map and display top industries and avg salary for each location.
 
