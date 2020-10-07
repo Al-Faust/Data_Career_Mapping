@@ -526,7 +526,7 @@ function myFunc(jobs, avg_salary) {
           .bindPopup("<h1>" + salary_row.job_title + "</h1> <hr> <h3> State: " + salary_row.state + "</h3><h3>Avg Salary: " + Math.round(Number(salary_row.avg_salary)) + "K</h3>")
 
         // Add the new marker to the appropriate layer
-        CT_DA_marker.addTo(layers[DA_title_fix]);
+        CT_DA_marker.addTo(layers['DATA_ANALYST']);
 
       } else if (salary_row.job_title == "Data Scientist") {
         var CT_DS_marker = L.marker([CT_lat, CT_lon], { icon: redIcon })
